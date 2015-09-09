@@ -1,0 +1,86 @@
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    background-color: #e3e3e3;
+}
+
+.hero-unit {
+    margin: 45px auto 45px auto;
+    width: 675px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 60px;
+    display: none;
+}
+
+.hero-unit h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+.thumbnail-wrapper{
+    width:25%;
+    float: left;
+}
+.pad{
+    padding:5px;
+}
+.thumbnail-graph-wrapper{
+    width:100%;
+    z-index: 100;
+    height:400px;
+}
+.thumbnail-wrapper-long{
+    width:50%;
+}
+.graph-top-layer{
+    z-index: 1000;
+    position: absolute;
+    width:25%;
+    height:400px;
+    /*opacity: 0.3;*/
+    margin-left: -6px;
+}
+
+.graph-top-layer-long{
+    width:50%;
+}
+.graph-top-layer:hover{
+    -webkit-box-shadow:inset 0px 0px 0px 5px #797979;
+    -moz-box-shadow:inset 0px 0px 0px 5px #797979;
+    box-shadow:inset 0px 0px 0px 5px #797979;
+    cursor: pointer;
+}
+.block{
+    /*width:860px;*/
+    position: relative;
+    margin: 0 auto;
+}
+.highcharts-container{width:inherit !important; height:100% !important;}
+.back-btn{
+    padding:5px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    cursor:pointer;
+    width:40px;
+}
+.chart-action-btn{
+    padding:5px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    cursor:pointer;
+    width: 145px;
+}
