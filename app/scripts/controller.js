@@ -4,12 +4,18 @@ define(['app','view'],
         var graphList = new Backbone.Collection(collectionJSON);
 
         if(View){
-            var temp = new View.SeriesCollection;
-            temp.fetch({
+            var seriesCollection = new View.ChartsCollection;
+
+            /*seriesCollection.fetch({
                 success: function (collection, response) {
-                    console.log(response);
+                     var graphsCollectionViewRender = new View.GraphsCollectionView({
+                        collection:collection
+                     });
+                },
+                error: function(){
                 }
-            })
+            });*/
+
             var graphsCollectionViewRender = new View.GraphsCollectionView({
                 collection:graphList
             });

@@ -12,7 +12,6 @@ define(['backbone','marionette'],
             showChart: function () {
                 $("#block").empty();
                 $(".menu").css('display', 'none');
-                this.trigger('show:chart');
             },
             showChartsCollection: function () {
                 $("#block").empty();
@@ -32,11 +31,15 @@ define(['backbone','marionette'],
         Backbone.history.stop();
         Backbone.history.start();
 
-        app.controller.navigate("", true);
-        if (Backbone.history) {
-            require(["controller"], function () {
-
-            });
+        if (Backbone.history && Backbone.history.getFragment()!=='story') {
+            app.controller.navigate("", true);
+        } else {
+            $('.undln').removeClass('undln');
+            $('.show-story').addClass('undln');
+            app.controller.navigate("story", true);
         }
+
+        require(["controller"], function () {});
+
         return app;
     });

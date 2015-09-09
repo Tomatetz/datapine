@@ -12,6 +12,7 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+        <!--<link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css">-->
         <!-- endbuild -->
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
@@ -25,7 +26,8 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="menu">
-            <menu><menuitem class="show-charts">Show charts</menuitem>|<menuitem class="show-story">Show story</menuitem></menu>
+            <menu><menuitem class="show-charts undln"><i class="fa fa-bar-chart"></i> Show charts</menuitem> |
+                <menuitem class="show-story">Show story <i class="fa fa-list-alt"></i></menuitem></menu>
         </div>
 
         <div class="hero-unit">
@@ -57,8 +59,7 @@
         <div id="block" class="block">
         </div>
 
-
-        <script type="text/template" class="class">
+        <script type="text/template" class="thumbnail">
                 <div class="thumbnail-wrapper">
                     <div class="pad">
                         <div class="graph-top-layer">
@@ -69,16 +70,20 @@
                 </div>
         </script>
 
-        <script type="text/template" class="graph-full">
+        <script type="text/template" class="chart-fullsize">
             <div class="chart-btns">
-                <div class="chart-action-btn btn">Change chart name</div>
-                <div class="back-btn btn">Back</div></div>
+                <menu>
+                    <menuitem class="back-btn"><i class="fa fa-caret-left"></i> Back</menuitem> |
+                    <menuitem class="chart-action-btn">Change chart name <i class="fa fa-pencil"></i></menuitem>
+                </menu>
+            </div>
             <div class="new-chart-name">
                 <input type="text" class="" id="chart-name" placeholder="Enter chart name"/>
-                <div class="apply-chart-rename-btn chart-rename-btn btn">Apply</div>
-                <div class="cancel-chart-rename-btn chart-rename-btn btn">Cancel</div>
+                <menu>
+                    <menuitem class="apply-chart-rename-btn chart-rename-btn"><i class="fa fa-check-circle-o"></i> Apply</menuitem> |
+                    <menuitem class="cancel-chart-rename-btn chart-rename-btn">Cancel <i class="fa fa-undo"></i></menuitem>
+                </menu>
             </div>
-            <!--<div class="clear"></div>-->
             <div class="graph-full-wrapper">
             </div>
         </script>

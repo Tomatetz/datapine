@@ -15,6 +15,14 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         // configurable paths
+
+        less: {
+            dist: {
+                files: {
+                    'app/styles/main.css' : 'app/styles/main.less'
+                }
+            }
+        },
         yeoman: {
             app: 'app',
             dist: 'dist'
@@ -347,4 +355,5 @@ module.exports = function (grunt) {
         'test',
         'build'
     ]);
+    grunt.loadNpmTasks('grunt-contrib-less');
 };

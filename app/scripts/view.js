@@ -2,9 +2,9 @@ define(['app'],
     function (app) {
         app.module("Show.View", function (View, app, Backbone, Marionette) {
 
-            View.SeriesCollection = Backbone.Collection.extend({
+            View.ChartsCollection = Backbone.Collection.extend({
                 url: function () {
-                    return './charts.json';
+                    return 'url/to/charts/collection';
                 },
                 initialize: function (model, options) {
                     if (options) {
@@ -14,9 +14,8 @@ define(['app'],
 
             });
 
-
             View.GraphThumbnail = Marionette.ItemView.extend({
-                template: _.template($('.class').html()),
+                template: _.template($('.thumbnail').html()),
                 triggers: {
                     "click .graph-top-layer": 'show:graph'
                 },
@@ -44,18 +43,22 @@ define(['app'],
             });
 
             View.GraphFullView = Marionette.ItemView.extend({
-                template: _.template($('.graph-full').html()),
+                template: _.template($('.chart-fullsize').html()),
                 events: {
                     "click .back-btn": "back",
                     "click .chart-action-btn": "chartAction",
                     "click .apply-chart-rename-btn": "chartRenameAction",
                     "click .cancel-chart-rename-btn": "cancelChartRenameAction"
                 },
+                modelEvents: {
+                    "change": "modelChanged"
+                },
                 back: function () {
                     app.controller.navigate("", true);
                 },
                 chartAction: function () {
                     this.$el.find('.new-chart-name').css('display', 'block');
+                    this.$el.find('#chart-name').focus();
                     this.$el.find('.chart-btns').css('display', 'none');
                 },
                 chartRenameAction: function () {
@@ -69,9 +72,6 @@ define(['app'],
                 cancelChartRenameAction: function () {
                     this.$el.find('.new-chart-name').css('display', 'none');
                     this.$el.find('.chart-btns').css('display', 'block');
-                },
-                modelEvents: {
-                    "change": "modelChanged"
                 },
                 modelChanged: function () {
                     var $that = this;
