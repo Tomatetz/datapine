@@ -39,9 +39,11 @@ body {
     padding:5px;
 }
 .thumbnail-graph-wrapper{
+    overflow: hidden;
     width:100%;
     z-index: 100;
     height:400px;
+    background-color: #ffffff;
 }
 .thumbnail-wrapper-long{
     width:50%;
@@ -51,8 +53,7 @@ body {
     position: absolute;
     width:25%;
     height:400px;
-    /*opacity: 0.3;*/
-    margin-left: -6px;
+    margin-left: -5px;
 }
 
 .graph-top-layer-long{
@@ -64,23 +65,110 @@ body {
     box-shadow:inset 0px 0px 0px 5px #797979;
     cursor: pointer;
 }
+.thumbnail-wrapper:hover .highcharts-container{
+    position: absolute;
+    -ms-transform: scale(1.2,1.2);
+    -webkit-transform: scale(0.9,0.9);
+    transform: scale(0.9,0.9);
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s;
+}
+
 .block{
     /*width:860px;*/
     position: relative;
     margin: 0 auto;
 }
 .highcharts-container{width:inherit !important; height:100% !important;}
-.back-btn{
-    padding:5px;
-    border-radius: 5px;
-    background-color: #ffffff;
+.btn{
+    text-align: center;
+    margin-bottom:5px;
     cursor:pointer;
     width:40px;
+    background: #b3b3b3;
+    background-image: -webkit-linear-gradient(top, #b3b3b3, #878787);
+    background-image: -moz-linear-gradient(top, #b3b3b3, #878787);
+    background-image: -ms-linear-gradient(top, #b3b3b3, #878787);
+    background-image: -o-linear-gradient(top, #b3b3b3, #878787);
+    background-image: linear-gradient(to bottom, #b3b3b3, #878787);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    float: left;
+}
+.btn:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+}
+.back-btn{
+    position: absolute;
+    right: 0px;
 }
 .chart-action-btn{
-    padding:5px;
-    border-radius: 5px;
-    background-color: #ffffff;
-    cursor:pointer;
+    position: relative;
     width: 145px;
+}
+.new-chart-name{
+    display: none;
+    width:200px;
+    position: relative;
+    margin:5px;
+}
+.chart-rename-btn{
+    top:0px;
+    position: absolute;
+    left: 150px;
+}
+.cancel-chart-rename-btn{
+    width:50px;
+    left: 235px;
+}
+.cancel-chart-rename-btn:hover, .back-btn:hover{
+    background-color: #cecece;
+}
+.apply-chart-rename-btn:hover{
+    background-color: #7dd683;
+}
+#chart-name{
+    height: 22px;
+    margin:5px;
+}
+.menu{
+    text-align: center;
+}
+.menu menuitem{
+    margin:5px;
+    cursor:pointer;
+
+    text-shadow: 1px 1px 1px #d2d2d2;
+}
+.menu menuitem:hover{
+    margin:5px;
+    cursor:pointer;
+
+    text-shadow: none;
+}
+.undln{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.56);
+}
+.clear{
+    height: 50px;
+    width: 100%;
+    float: none;
+}
+.chart-btns{
+    height: 43px;
+    width: 100%;
 }

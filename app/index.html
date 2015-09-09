@@ -24,7 +24,9 @@
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
+        <div class="menu">
+            <menu><menuitem class="show-charts">Show charts</menuitem>|<menuitem class="show-story">Show story</menuitem></menu>
+        </div>
 
         <div class="hero-unit">
           <h1>datapine's Senior Frontend Developers' test</h1>
@@ -52,7 +54,6 @@
         <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
         <!-- endbuild -->
 
-
         <div id="block" class="block">
         </div>
 
@@ -69,11 +70,17 @@
         </script>
 
         <script type="text/template" class="graph-full">
-
-            <div class="chart-action-btn">Change chart name</div>
-                <div class="graph-full-wrapper">
-                </div>
-            <div class="back-btn">Back</div>
+            <div class="chart-btns">
+                <div class="chart-action-btn btn">Change chart name</div>
+                <div class="back-btn btn">Back</div></div>
+            <div class="new-chart-name">
+                <input type="text" class="" id="chart-name" placeholder="Enter chart name"/>
+                <div class="apply-chart-rename-btn chart-rename-btn btn">Apply</div>
+                <div class="cancel-chart-rename-btn chart-rename-btn btn">Cancel</div>
+            </div>
+            <!--<div class="clear"></div>-->
+            <div class="graph-full-wrapper">
+            </div>
         </script>
 
 </body>

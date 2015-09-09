@@ -1,6 +1,5 @@
 var collectionJSON = [
     {
-    id: 0,
     plotOptions: {
         series: {
             //animation: true
@@ -61,7 +60,6 @@ var collectionJSON = [
 
 
     {
-        id: 1,
         long: true,
         chart: {
             type: 'column'
@@ -127,7 +125,6 @@ var collectionJSON = [
 
 
     {
-        id: 2,
         credits: {
             enabled: false
         },
@@ -183,7 +180,6 @@ var collectionJSON = [
 
 
     {
-        id: 3,
         long: true,
         credits: {
             enabled: false
@@ -247,7 +243,6 @@ var collectionJSON = [
         }]
     },
     {
-        id: 4,
         long: true,
         credits: {
             enabled: false
@@ -313,6 +308,44 @@ var collectionJSON = [
                 33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
                 35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
                 21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        }]
+    },
+
+
+    {
+        credits: {
+            enabled: false
+        },
+        xAxis: {
+            min: -0.5,
+            max: 5.5
+        },
+        yAxis: {
+            min: 0
+        },
+        title: {
+            text: 'Scatter plot with regression line'
+        },
+        series: [{
+            type: 'line',
+            name: 'Regression Line',
+            data: [[0, 1.11], [5, 4.51]],
+            marker: {
+                enabled: false
+            },
+            states: {
+                hover: {
+                    lineWidth: 0
+                }
+            },
+            enableMouseTracking: false
+        }, {
+            type: 'scatter',
+            name: 'Observations',
+            data: [1, 1.5, 2.8, 3.5, 3.9, 4.2],
+            marker: {
+                radius: 4
+            }
         }]
     }
 ]

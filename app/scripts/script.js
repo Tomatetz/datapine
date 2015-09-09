@@ -1,53 +1,42 @@
-console.log(Backbone);
+define(['backbone','marionette'],
+    function(Backbone, Marionette) {
 
+        var app = new Backbone.Marionette.Application();
 
-    /*var Controller = Backbone.Router.extend({
-        routes: {
-            "": "start", // Пустой hash-тэг
-            "!/": "start", // Начальная страница
-            "!/success": "success", // Блок удачи
-            "!/error": "error" // Блок ошибки
-        },
+        var Controller = Backbone.Router.extend({
+            routes: {
+                "chart/:id": "showChart",
+                "": "showChartsCollection",
+                "story": "story"
+            },
+            showChart: function () {
+                $("#block").empty();
+                $(".menu").css('display', 'none');
+                this.trigger('show:chart');
+            },
+            showChartsCollection: function () {
+                $("#block").empty();
+                $(".menu").css('display', 'block');
+                $(".hero-unit").css('display', 'none');
+                this.trigger('show:collection');
 
-        start: function () {
-            $(".block").hide(); // Прячем все блоки
-            $("#start").show(); // Показываем нужный
-        },
+            },
+            story: function () {
+                $("#block").empty();
+                $(".hero-unit").css('display', 'block');
+            }
+        });
 
-        success: function () {
-            $(".block").hide();
-            $("#success").show();
-        },
+        app.controller = new Controller();
 
-        error: function () {
-            $(".block").hide();
-            $("#error").show();
+        Backbone.history.stop();
+        Backbone.history.start();
+
+        app.controller.navigate("", true);
+        if (Backbone.history) {
+            require(["controller"], function () {
+
+            });
         }
+        return app;
     });
-
-    var controller = new Controller(); // Создаём контроллер
-
-    Backbone.history.start();  // Запускаем HTML5 History push
-
-
-
-    var Start = Backbone.View.extend({
-        el: $("#start"), // DOM элемент widget'а
-        template: _.template($('#start').html()),
-        events: {
-            "click input:button": "check" // Обработчик клика на кнопке "Проверить"
-        },
-        check: function () {
-            if (this.el.find("input:text").val() == "test") // Проверка текста
-                controller.navigate("success", true); // переход на страницу success
-            else
-                controller.navigate("error", true); // переход на страницу error
-        }
-    });
-
-    var start = new Start();*/
-
-
-
-
-
