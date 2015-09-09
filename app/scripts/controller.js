@@ -1,9 +1,7 @@
 define(['app','view'],
     function(app, View) {
 
-        var graphList = new Backbone.Collection(collectionJSON);
-
-        if(View){
+        var chartsCollectionList = new Backbone.Collection(collectionJSON);
 
             /*
             var seriesCollection = new View.ChartsCollection;
@@ -19,27 +17,28 @@ define(['app','view'],
             });
             */
 
-            var graphsCollectionViewRender = new View.GraphsCollectionView({
-                collection:graphList
-            });
-            $("#block").append(graphsCollectionViewRender.render().el);
+        var chartsCollectionViewRender = new View.ChartsCollectionView({
+            collection:chartsCollectionList
+        });
+        $("#block").append(chartsCollectionViewRender.render().el);
 
-            graphsCollectionViewRender.on('Confirmed', function(options){
-                var title = options.model.get('title').text;
-                app.controller.navigate("chart/" + title, true);
-                var graphFullView = new View.GraphFullView({
-                    model: options.model
-                });
-                $("#block").append(graphFullView.render().el);
-            });
+        chartsCollectionViewRender.on('show:fullsize', function(options){
 
-            $('.menu-item').on('click', function(){
-                $('.undln').removeClass('undln');
-                $(this).addClass('undln');
-                app.controller.navigate($(this).data('navigate'), true);
+            var title = options.model.get('title').text;
+            app.controller.navigate("chart/" + title, true);
+
+            var graphFullView = new View.ChartFullView({
+                model: options.model
             });
-        }
+            $("#block").append(graphFullView.render().el);
+        });
+
+        $('.menu-item').on('click', function(){
+            $('.undln').removeClass('undln');
+            $(this).addClass('undln');
+            app.controller.navigate($(this).data('navigateTo'), true);
+        });
         app.controller.on('show:collection', function(){
-            $("#block").append(graphsCollectionViewRender.render().el);
+            $("#block").append(chartsCollectionViewRender.render().el);
         });
     });

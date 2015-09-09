@@ -24,10 +24,10 @@ define(['app'],
                 setTimeout(q, 100);
             }
 
-            View.GraphThumbnail = Marionette.ItemView.extend({
+            View.ChartThumbnail = Marionette.ItemView.extend({
                 template: _.template($('.thumbnail').html()),
                 triggers: {
-                    "click .graph-top-layer": 'show:graph'
+                    "click .graph-top-layer": 'show:chart'
                 },
                 onRender: function () {
                     if (this.model.get('long')) {
@@ -38,14 +38,14 @@ define(['app'],
                 }
             });
 
-            View.GraphsCollectionView = Marionette.CollectionView.extend({
-                childView: View.GraphThumbnail,
-                onChildviewShowGraph: function (childModel) {
-                    this.trigger('Confirmed', childModel);
+            View.ChartsCollectionView = Marionette.CollectionView.extend({
+                childView: View.ChartThumbnail,
+                onChildviewShowChart: function (childModel) {
+                    this.trigger('show:fullsize', childModel);
                 }
             });
 
-            View.GraphFullView = Marionette.ItemView.extend({
+            View.ChartFullView = Marionette.ItemView.extend({
                 template: _.template($('.chart-fullsize').html()),
                 events: {
                     "click .back-btn": "back",
@@ -77,7 +77,7 @@ define(['app'],
                     this.$el.find('.chart-btns').css('display', 'block');
                 },
                 modelChanged: function () {
-                    makeChart.call(this, '.chart-full-wrapper');
+                    this.render();
                 },
                 onRender: function () {
                     makeChart.call(this, '.chart-full-wrapper');
