@@ -1,5 +1,11 @@
 @import '../bower_components/fontawesome/css/font-awesome.css';
 
+@thumbnailShort: 25%;
+@thumbnailLong: 50%;
+@brickRed: #c0392b;
+@brickRedLight: #c17962;
+@commonTransition: all ease-out 1s;
+
 .vendor(@property, @value) {
   -webkit-@{property}: @value;
   -moz-@{property}: @value;
@@ -26,9 +32,6 @@
     color: @color;
   }
 }
-@thumbnailShort: 25%;
-@thumbnailLong: 50%;
-@commonTransition: all ease-out 1s;
 
 body {
   background: #fafafa;
@@ -68,13 +71,25 @@ body {
     .vendor(transform, scale(1, 1));
     .vendor(transition, @commonTransition);
   }
+  svg {
+    filter: grayscale(100%);
+    .vendor(transition, @commonTransition);
+  }
   &:hover {
     .highcharts-container {
       position: absolute;
-      .vendor(transform, scale(0.9, 0.9));
+      .vendor(transform, scale(0.98, 0.98));
+      .vendor(transition, @commonTransition);
+    }
+    svg {
+      filter: grayscale(50%);
       .vendor(transition, @commonTransition);
     }
   }
+}
+
+.thumbnail-wrapper-long {
+  width: @thumbnailLong;
 }
 
 .pad {
@@ -87,12 +102,8 @@ body {
   z-index: 100;
   height: 400px;
   background-color: #ffffff;
-  border:1px solid #BFBFBF;
+  border: 1px solid #BFBFBF;
   .vendor(user-select, none);
-}
-
-.thumbnail-wrapper-long {
-  width: @thumbnailLong;
 }
 
 .graph-top-layer {
@@ -100,10 +111,10 @@ body {
   position: absolute;
   width: @thumbnailShort;
   height: 410px;
-  margin-top:-4px;
+  margin-top: -4px;
   margin-left: -4px;
   &:hover {
-    .vendor(box-shadow, inset 0px 0px 0px 5px #797979);
+    .vendor(box-shadow, inset 0px 0px 0px 5px @brickRedLight);
     cursor: pointer;
   }
 }
@@ -140,8 +151,7 @@ body {
 .new-chart-name menu {
   float: right;
   padding: 0px;
-  margin: 0px;
-  margin-top: 10px;
+  margin: 7px 0px 0px;
 }
 
 .chart-rename-btn {
@@ -155,11 +165,12 @@ body {
 
 #chart-name {
   height: 22px;
-  margin: 5px;
+  margin: 5px 5px 8px;
   width: 140px;
   border: none;
   background-color: #FFF;
-  .placeholder(#c0392b);
+  padding-left: 5px;
+  .placeholder(@brickRed);
   &:focus {
     .placeholder(transparent);
     outline: 0;
@@ -175,11 +186,18 @@ menu {
 menuitem {
   cursor: pointer;
   text-shadow: 1px 1px 1px #d2d2d2;
-  .icon(#6493b3);
+  font-size: 15px;
+  .icon(@brickRed);
 }
 
 .undln {
   border-bottom: 1px solid rgba(0, 0, 0, 0.56);
+  i {
+    color: @brickRed;
+  }
+  &:hover {
+    cursor: default;
+  }
 }
 
 .chart-btns {
@@ -194,6 +212,14 @@ menuitem {
 .cancel-chart-rename-btn {
   .icon(#b39942);
 }
-.chart-full-wrapper{
+
+.chart-full-wrapper {
   border: 1px solid #BFBFBF;
+  svg {
+    filter: invert(5%);
+  }
+}
+
+.brickred {
+  color: @brickRed;
 }

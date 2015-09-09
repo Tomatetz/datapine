@@ -39,14 +39,29 @@ body {
   -moz-transition: all ease-out 1s;
   transition: all ease-out 1s;
 }
-.thumbnail-wrapper:hover .highcharts-container {
-  position: absolute;
-  -webkit-transform: scale(0.9, 0.9);
-  -moz-transform: scale(0.9, 0.9);
-  transform: scale(0.9, 0.9);
+.thumbnail-wrapper svg {
+  filter: grayscale(100%);
   -webkit-transition: all ease-out 1s;
   -moz-transition: all ease-out 1s;
   transition: all ease-out 1s;
+}
+.thumbnail-wrapper:hover .highcharts-container {
+  position: absolute;
+  -webkit-transform: scale(0.98, 0.98);
+  -moz-transform: scale(0.98, 0.98);
+  transform: scale(0.98, 0.98);
+  -webkit-transition: all ease-out 1s;
+  -moz-transition: all ease-out 1s;
+  transition: all ease-out 1s;
+}
+.thumbnail-wrapper:hover svg {
+  filter: grayscale(50%);
+  -webkit-transition: all ease-out 1s;
+  -moz-transition: all ease-out 1s;
+  transition: all ease-out 1s;
+}
+.thumbnail-wrapper-long {
+  width: 50%;
 }
 .pad {
   padding: 0px 5px 10px 5px;
@@ -62,9 +77,6 @@ body {
   -moz-user-select: none;
   user-select: none;
 }
-.thumbnail-wrapper-long {
-  width: 50%;
-}
 .graph-top-layer {
   z-index: 1000;
   position: absolute;
@@ -74,9 +86,9 @@ body {
   margin-left: -4px;
 }
 .graph-top-layer:hover {
-  -webkit-box-shadow: inset 0px 0px 0px 5px #797979;
-  -moz-box-shadow: inset 0px 0px 0px 5px #797979;
-  box-shadow: inset 0px 0px 0px 5px #797979;
+  -webkit-box-shadow: inset 0px 0px 0px 5px #c17962;
+  -moz-box-shadow: inset 0px 0px 0px 5px #c17962;
+  box-shadow: inset 0px 0px 0px 5px #c17962;
   cursor: pointer;
 }
 .graph-top-layer-long {
@@ -108,8 +120,7 @@ body {
 .new-chart-name menu {
   float: right;
   padding: 0px;
-  margin: 0px;
-  margin-top: 10px;
+  margin: 7px 0px 0px;
 }
 .chart-rename-btn {
   top: 0px;
@@ -120,10 +131,11 @@ body {
 }
 #chart-name {
   height: 22px;
-  margin: 5px;
+  margin: 5px 5px 8px;
   width: 140px;
   border: none;
   background-color: #FFF;
+  padding-left: 5px;
 }
 #chart-name::-webkit-input-placeholder {
   color: #c0392b;
@@ -162,12 +174,19 @@ menu {
 menuitem {
   cursor: pointer;
   text-shadow: 1px 1px 1px #d2d2d2;
+  font-size: 15px;
 }
 menuitem:hover i {
-  color: #6493b3;
+  color: #c0392b;
 }
 .undln {
   border-bottom: 1px solid rgba(0, 0, 0, 0.56);
+}
+.undln i {
+  color: #c0392b;
+}
+.undln:hover {
+  cursor: default;
 }
 .chart-btns {
   width: 100%;
@@ -181,4 +200,10 @@ menuitem:hover i {
 }
 .chart-full-wrapper {
   border: 1px solid #BFBFBF;
+}
+.chart-full-wrapper svg {
+  filter: invert(5%);
+}
+.brickred {
+  color: #c0392b;
 }

@@ -1,8 +1,8 @@
 var collectionJSON = [
+    //---chart1
     {
     plotOptions: {
         series: {
-            //animation: true
         }
     },
     credits: {
@@ -28,7 +28,8 @@ var collectionJSON = [
             value: 0,
             width: 1,
             color: '#808080'
-        }]
+        }],
+        gridLineColor: '#F2F2F2'
     },
     tooltip: {
         valueSuffix: '°C'
@@ -55,74 +56,81 @@ var collectionJSON = [
 },
 
 
-
+    //---chart2
 
 
 
     {
         long: true,
-        chart: {
-            type: 'column'
-        },
         credits: {
             enabled: false
         },
+        chart: {
+            type: 'area'
+        },
         title: {
-            text: 'Stacked column chart'
+            text: 'Historic and Estimated Worldwide Population Growth by Region'
+        },
+        subtitle: {
+            text: 'Source: Wikipedia.org'
         },
         xAxis: {
-            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
-        },
-        yAxis: {
-            min: 0,
+            categories: ['1750', '1800', '1850', '1900', '1950', '1999', '2050'],
+            tickmarkPlacement: 'on',
             title: {
-                text: 'Total fruit consumption'
-            },
-            stackLabels: {
-                enabled: true,
-                style: {
-                    fontWeight: 'bold'
-                }
+                enabled: false
             }
         },
-        legend: {
-            align: 'right',
-            x: -30,
-            verticalAlign: 'top',
-            y: 25,
-            floating: true,
-            borderColor: '#CCC',
-            borderWidth: 1,
-            shadow: false
+        yAxis: {
+            title: {
+                text: 'Billions'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value / 1000;
+                }
+            },
+            gridLineColor: '#F2F2F2'
         },
         tooltip: {
+            shared: true,
+            valueSuffix: ' millions'
         },
         plotOptions: {
-            column: {
-                //animation: true,
+            area: {
                 stacking: 'normal',
-                dataLabels: {
-                    enabled: true,
-                    style: {
-                        textShadow: '0 0 3px black'
-                    }
+                lineColor: '#666666',
+                lineWidth: 1,
+                marker: {
+                    lineWidth: 1,
+                    lineColor: '#666666'
                 }
             }
         },
         series: [{
-            name: 'John',
-            data: [5, 3, 4, 7, 2]
+            name: 'Asia',
+            data: [502, 635, 809, 947, 1402, 3634, 5268]
         }, {
-            name: 'Jane',
-            data: [2, 2, 3, 2, 1]
+            name: 'Africa',
+            data: [106, 107, 111, 133, 221, 767, 1766]
         }, {
-            name: 'Joe',
-            data: [3, 4, 4, 2, 5]
+            name: 'Europe',
+            data: [163, 203, 276, 408, 547, 729, 628]
+        }, {
+            name: 'America',
+            data: [18, 31, 54, 156, 339, 818, 1201]
+        }, {
+            name: 'Oceania',
+            data: [2, 2, 2, 6, 13, 30, 46]
         }]
     },
 
 
 
+
+
+
+    //---chart3
 
     {
         credits: {
@@ -136,8 +144,6 @@ var collectionJSON = [
         },
         title: {
             text: 'Browser market shares January, 2015 to May, 2015'
-        },
-        tooltip: {
         },
         plotOptions: {
             pie: {
@@ -177,74 +183,70 @@ var collectionJSON = [
     },
 
 
-
+    //---chart4
 
     {
         long: true,
+        chart: {
+            type: 'column'
+        },
         credits: {
             enabled: false
         },
-        chart: {
-            type: 'area'
-        },
         title: {
-            text: 'Historic and Estimated Worldwide Population Growth by Region'
-        },
-        subtitle: {
-            text: 'Source: Wikipedia.org'
+            text: 'Stacked column chart'
         },
         xAxis: {
-            categories: ['1750', '1800', '1850', '1900', '1950', '1999', '2050'],
-            tickmarkPlacement: 'on',
-            title: {
-                enabled: false
-            }
+            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
         },
         yAxis: {
+            min: 0,
             title: {
-                text: 'Billions'
+                text: 'Total fruit consumption'
             },
-            labels: {
-                formatter: function () {
-                    return this.value / 1000;
-                }
-            }
+            stackLabels: {
+                enabled: true
+            },
+            gridLineColor: '#F2F2F2'
+        },
+        legend: {
+            align: 'right',
+            x: -30,
+            verticalAlign: 'top',
+            y: 25,
+            floating: true,
+            borderColor: '#CCC',
+            borderWidth: 1,
+            shadow: false
         },
         tooltip: {
-            shared: true,
-            valueSuffix: ' millions'
         },
         plotOptions: {
-            area: {
+            column: {
+                //animation: true,
                 stacking: 'normal',
-                lineColor: '#666666',
-                lineWidth: 1,
-                marker: {
-                    lineWidth: 1,
-                    lineColor: '#666666'
+                dataLabels: {
+                    enabled: true,
+                    style: {
+                        textShadow: '0 0 3px black'
+                    }
                 }
             }
         },
         series: [{
-            name: 'Asia',
-            data: [502, 635, 809, 947, 1402, 3634, 5268]
+            name: 'John',
+            data: [5, 3, 4, 7, 2]
         }, {
-            name: 'Africa',
-            data: [106, 107, 111, 133, 221, 767, 1766]
+            name: 'Jane',
+            data: [2, 2, 3, 2, 1]
         }, {
-            name: 'Europe',
-            data: [163, 203, 276, 408, 547, 729, 628]
-        }, {
-            name: 'America',
-            data: [18, 31, 54, 156, 339, 818, 1201]
-        }, {
-            name: 'Oceania',
-            data: [2, 2, 2, 6, 13, 30, 46]
+            name: 'Joe',
+            data: [3, 4, 4, 2, 5]
         }]
     },
 
 
-
+    //---chart5
 
     {
         long: true,
@@ -283,7 +285,8 @@ var collectionJSON = [
                 'Friday',
                 'Saturday',
                 'Sunday'
-            ]
+            ],
+            gridLineColor: '#F2F2F2'
         },
         yAxis: {
             title: {
@@ -311,6 +314,8 @@ var collectionJSON = [
     },
 
 
+    //---chart6
+
     {
         credits: {
             enabled: false
@@ -320,7 +325,8 @@ var collectionJSON = [
             max: 5.5
         },
         yAxis: {
-            min: 0
+            min: 0,
+            gridLineColor: '#F2F2F2'
         },
         title: {
             text: 'Scatter plot with regression line'
@@ -348,6 +354,7 @@ var collectionJSON = [
         }]
     },
 
+    //---chart7
 
 
     {
@@ -371,13 +378,15 @@ var collectionJSON = [
             },
             title: {
                 text: 'Date'
-            }
+            },
+            gridLineColor: '#F2F2F2'
         },
         yAxis: {
             title: {
                 text: 'Snow depth (m)'
             },
-            min: 0
+            min: 0,
+            gridLineColor: '#F2F2F2'
         },
         tooltip: {
             headerFormat: '<b>{series.name}</b><br>',

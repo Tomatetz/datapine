@@ -4,9 +4,11 @@ define(['app','view'],
         var graphList = new Backbone.Collection(collectionJSON);
 
         if(View){
+
+            /*
             var seriesCollection = new View.ChartsCollection;
 
-            /*seriesCollection.fetch({
+            seriesCollection.fetch({
                 success: function (collection, response) {
                      var graphsCollectionViewRender = new View.GraphsCollectionView({
                         collection:collection
@@ -14,7 +16,8 @@ define(['app','view'],
                 },
                 error: function(){
                 }
-            });*/
+            });
+            */
 
             var graphsCollectionViewRender = new View.GraphsCollectionView({
                 collection:graphList
@@ -30,22 +33,13 @@ define(['app','view'],
                 $("#block").append(graphFullView.render().el);
             });
 
-            $('.show-charts').on('click', function(){
+            $('.menu-item').on('click', function(){
                 $('.undln').removeClass('undln');
                 $(this).addClass('undln');
-                app.controller.navigate("", true);
-            });
-            $('.show-story').on('click', function(){
-                $('.undln').removeClass('undln');
-                $(this).addClass('undln');
-                app.controller.navigate("story", true);
+                app.controller.navigate($(this).data('navigate'), true);
             });
         }
         app.controller.on('show:collection', function(){
             $("#block").append(graphsCollectionViewRender.render().el);
         });
-        app.controller.on('show:chart', function(){
-            //$("#block").append(graphsCollectionViewRender.render().el);
-        });
-
     });

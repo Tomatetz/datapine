@@ -31,7 +31,7 @@ require.config({
         underscore: '../bower_components/underscore/underscore',
         marionette: '../bower_components/marionette/lib/backbone.marionette',
         highcharts: '../bower_components/highcharts-release/highcharts',
-        app: './script'
+        app: './app'
     }
 });
 

@@ -7,21 +7,23 @@ define(['backbone','marionette'],
             routes: {
                 "chart/:id": "showChart",
                 "": "showChartsCollection",
-                "story": "story"
+                "story": "showStory"
             },
-            showChart: function (e) {
-                $("#block").empty();
-                $(".menu").css('display', 'none');
+            showChart: function () {
+                this.emptyBlock('none','none');
             },
             showChartsCollection: function () {
-                $("#block").empty();
-                $(".menu").css('display', 'block');
+                this.emptyBlock('block','none');
                 $(".hero-unit").css('display', 'none');
                 this.trigger('show:collection');
             },
-            story: function () {
+            showStory: function () {
+                this.emptyBlock('block', 'block');
+            },
+            emptyBlock: function(showMenu, showStory){
                 $("#block").empty();
-                $(".hero-unit").css('display', 'block');
+                $(".hero-unit").css('display', showStory);
+                $(".menu").css('display', showMenu);
             }
         });
 

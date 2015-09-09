@@ -26,8 +26,8 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="menu">
-            <menu><menuitem class="show-charts undln"><i class="fa fa-bar-chart"></i> Show charts</menuitem> |
-                <menuitem class="show-story">Show story <i class="fa fa-list-alt"></i></menuitem></menu>
+            <menu><menuitem class="menu-item show-charts undln" data-navigate=""><i class="fa fa-bar-chart"></i> Show charts</menuitem> <span class="brickred">|</span>
+                <menuitem class="menu-item show-story" data-navigate="story">Show story <i class="fa fa-list-alt"></i></menuitem></menu>
         </div>
 
         <div class="hero-unit">
@@ -73,14 +73,15 @@
         <script type="text/template" class="chart-fullsize">
             <div class="chart-btns">
                 <menu>
-                    <menuitem class="back-btn"><i class="fa fa-caret-left"></i> Back</menuitem> |
+                    <menuitem class="back-btn"><i class="fa fa-caret-left"></i> Back</menuitem> <span class="brickred">|</span>
                     <menuitem class="chart-action-btn">Change chart name <i class="fa fa-pencil"></i></menuitem>
                 </menu>
             </div>
             <div class="new-chart-name">
                 <input type="text" class="" id="chart-name" placeholder="Enter chart name"/>
                 <menu>
-                    <menuitem class="apply-chart-rename-btn chart-rename-btn"><i class="fa fa-check-circle-o"></i> Apply</menuitem> |
+                    <menuitem class="apply-chart-rename-btn chart-rename-btn"><i class="fa fa-check-circle-o"></i> Apply</menuitem>
+                    <span class="brickred">|</span>
                     <menuitem class="cancel-chart-rename-btn chart-rename-btn">Cancel <i class="fa fa-undo"></i></menuitem>
                 </menu>
             </div>

@@ -2,9 +2,10 @@ define(['app'],
     function (app) {
         app.module("Show.View", function (View, app, Backbone, Marionette) {
 
+            /*
             View.ChartsCollection = Backbone.Collection.extend({
                 url: function () {
-                    return 'url/to/charts/collection';
+                    return '/url/to/charts/collection';
                 },
                 initialize: function (model, options) {
                     if (options) {
@@ -13,25 +14,27 @@ define(['app'],
                 }
 
             });
+            */
+
+            function makeChart(holder){
+                var $that = this;
+                function q() {
+                    $that.$(holder).highcharts($that.model.attributes);
+                }
+                setTimeout(q, 100);
+            }
 
             View.GraphThumbnail = Marionette.ItemView.extend({
                 template: _.template($('.thumbnail').html()),
                 triggers: {
                     "click .graph-top-layer": 'show:graph'
                 },
-                initialize: function () {
-                },
                 onRender: function () {
-                    var $that = this;
                     if (this.model.get('long')) {
                         this.$('.thumbnail-wrapper').addClass('thumbnail-wrapper-long');
                         this.$('.graph-top-layer').addClass('graph-top-layer-long');
                     }
-                    function q() {
-                        $that.$('.thumbnail-graph-wrapper').highcharts($that.model.attributes);
-                    }
-
-                    setTimeout(q, 500);
+                    makeChart.call(this, '.thumbnail-graph-wrapper');
                 }
             });
 
@@ -74,18 +77,10 @@ define(['app'],
                     this.$el.find('.chart-btns').css('display', 'block');
                 },
                 modelChanged: function () {
-                    var $that = this;
-                    function q() {
-                        $that.$('.chart-full-wrapper').highcharts($that.model.attributes);
-                    }
-                    setTimeout(q, 500);
+                    makeChart.call(this, '.chart-full-wrapper');
                 },
                 onRender: function () {
-                    var $that = this;
-                    function q() {
-                        $that.$('.chart-full-wrapper').highcharts($that.model.attributes);
-                    }
-                    setTimeout(q, 500);
+                    makeChart.call(this, '.chart-full-wrapper');
                 }
             });
         });
