@@ -40,10 +40,12 @@ define(['app','view'],
                 $(this).addClass('undln');
                 app.controller.navigate("story", true);
             });
-
         }
         app.controller.on('show:collection', function(){
             $("#block").append(graphsCollectionViewRender.render().el);
+        });
+        app.controller.on('show:chart', function(){
+            //$("#block").append(graphsCollectionViewRender.render().el);
         });
 
     });

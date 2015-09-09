@@ -9,7 +9,7 @@ define(['backbone','marionette'],
                 "": "showChartsCollection",
                 "story": "story"
             },
-            showChart: function () {
+            showChart: function (e) {
                 $("#block").empty();
                 $(".menu").css('display', 'none');
             },
@@ -18,7 +18,6 @@ define(['backbone','marionette'],
                 $(".menu").css('display', 'block');
                 $(".hero-unit").css('display', 'none');
                 this.trigger('show:collection');
-
             },
             story: function () {
                 $("#block").empty();

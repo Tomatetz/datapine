@@ -76,14 +76,14 @@ define(['app'],
                 modelChanged: function () {
                     var $that = this;
                     function q() {
-                        $that.$('.graph-full-wrapper').highcharts($that.model.attributes);
+                        $that.$('.chart-full-wrapper').highcharts($that.model.attributes);
                     }
                     setTimeout(q, 500);
                 },
                 onRender: function () {
                     var $that = this;
                     function q() {
-                        $that.$('.graph-full-wrapper').highcharts($that.model.attributes);
+                        $that.$('.chart-full-wrapper').highcharts($that.model.attributes);
                     }
                     setTimeout(q, 500);
                 }

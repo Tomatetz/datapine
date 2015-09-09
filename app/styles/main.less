@@ -1,0 +1,199 @@
+@import '../bower_components/fontawesome/css/font-awesome.css';
+
+.vendor(@property, @value) {
+  -webkit-@{property}: @value;
+  -moz-@{property}: @value;
+  @{property}: @value;
+}
+
+.placeholder(@color) {
+  &::-webkit-input-placeholder {
+    color: @color;
+    text-indent: 20px;
+  }
+  &:-moz-placeholder {
+    color: @color;
+    text-indent: 20px;
+  }
+  &::-moz-placeholder {
+    color: @color;
+    text-indent: 20px;
+  }
+}
+
+.icon(@color) {
+  &:hover i {
+    color: @color;
+  }
+}
+@thumbnailShort: 25%;
+@thumbnailLong: 50%;
+@commonTransition: all ease-out 1s;
+
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+  background-color: #e3e3e3;
+}
+
+.hero-unit {
+  margin: 45px auto 45px auto;
+  width: 675px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  background-color: #eee;
+  border-radius: 6px;
+  padding: 60px;
+  display: none;
+  h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.thumbnail-wrapper {
+  width: @thumbnailShort;
+  float: left;
+  .highcharts-container {
+    .vendor(transform, scale(1, 1));
+    .vendor(transition, @commonTransition);
+  }
+  &:hover {
+    .highcharts-container {
+      position: absolute;
+      .vendor(transform, scale(0.9, 0.9));
+      .vendor(transition, @commonTransition);
+    }
+  }
+}
+
+.pad {
+  padding: 0px 5px 10px 5px;
+}
+
+.thumbnail-graph-wrapper {
+  overflow: hidden;
+  width: 100%;
+  z-index: 100;
+  height: 400px;
+  background-color: #ffffff;
+  border:1px solid #BFBFBF;
+  .vendor(user-select, none);
+}
+
+.thumbnail-wrapper-long {
+  width: @thumbnailLong;
+}
+
+.graph-top-layer {
+  z-index: 1000;
+  position: absolute;
+  width: @thumbnailShort;
+  height: 410px;
+  margin-top:-4px;
+  margin-left: -4px;
+  &:hover {
+    .vendor(box-shadow, inset 0px 0px 0px 5px #797979);
+    cursor: pointer;
+  }
+}
+
+.graph-top-layer-long {
+  width: @thumbnailLong;
+}
+
+.block {
+  position: relative;
+  margin: 0 auto;
+}
+
+.highcharts-container {
+  width: inherit !important;
+  height: 100% !important;
+}
+
+.chart-action-btn {
+  position: relative;
+  width: 145px;
+}
+
+.new-chart-name {
+  display: none;
+  width: 300px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  .vendor(user-select, none);
+}
+
+.new-chart-name menu {
+  float: right;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+.chart-rename-btn {
+  top: 0px;
+}
+
+.cancel-chart-rename-btn {
+  width: 50px;
+  left: 235px;
+}
+
+#chart-name {
+  height: 22px;
+  margin: 5px;
+  width: 140px;
+  border: none;
+  background-color: #FFF;
+  .placeholder(#c0392b);
+  &:focus {
+    .placeholder(transparent);
+    outline: 0;
+  }
+}
+
+menu {
+  padding-left: 0px;
+  text-align: center;
+  .vendor(user-select, none);
+}
+
+menuitem {
+  cursor: pointer;
+  text-shadow: 1px 1px 1px #d2d2d2;
+  .icon(#6493b3);
+}
+
+.undln {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.56);
+}
+
+.chart-btns {
+  width: 100%;
+  text-align: center;
+}
+
+.apply-chart-rename-btn {
+  .icon(#45b33d);
+}
+
+.cancel-chart-rename-btn {
+  .icon(#b39942);
+}
+.chart-full-wrapper{
+  border: 1px solid #BFBFBF;
+}

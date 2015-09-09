@@ -57,10 +57,10 @@ body {
   z-index: 100;
   height: 400px;
   background-color: #ffffff;
+  border: 1px solid #BFBFBF;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  border: 1px solid #BFBFBF;
 }
 .thumbnail-wrapper-long {
   width: 50%;
@@ -166,15 +166,6 @@ menuitem {
 menuitem:hover i {
   color: #6493b3;
 }
-.menu menuitem {
-  margin: 5px;
-  cursor: pointer;
-}
-.menu menuitem:hover {
-  margin: 5px;
-  cursor: pointer;
-  text-shadow: none;
-}
 .undln {
   border-bottom: 1px solid rgba(0, 0, 0, 0.56);
 }
@@ -187,4 +178,7 @@ menuitem:hover i {
 }
 .cancel-chart-rename-btn:hover i {
   color: #b39942;
+}
+.chart-full-wrapper {
+  border: 1px solid #BFBFBF;
 }
