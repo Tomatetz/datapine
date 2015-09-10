@@ -23,7 +23,6 @@ define(['app','view'],
         $("#block").append(chartsCollectionViewRender.render().el);
 
         chartsCollectionViewRender.on('show:fullsize', function(options){
-
             var title = options.model.get('title').text;
             app.controller.navigate("chart/" + title, true);
 

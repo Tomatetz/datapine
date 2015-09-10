@@ -40,7 +40,5 @@ define(['backbone','marionette'],
             app.controller.navigate("story", true);
         }
 
-        require(["controller"], function () {});
-
         return app;
     });

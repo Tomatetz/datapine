@@ -39,4 +39,5 @@ require([
     'backbone', 'marionette',
     'highcharts', 'app'
 ], function (Backbone, Marionette) {
+    require(["controller"], function () {});
 });
