@@ -203,3 +203,7 @@ menuitem:hover i {
 .brickred {
   color: #c0392b;
 }
+.code {
+  font-size: 15px;
+  line-height: 1;
+}

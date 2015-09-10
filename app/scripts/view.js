@@ -2,20 +2,6 @@ define(['app'],
     function (app) {
         app.module("Show.View", function (View, app, Backbone, Marionette) {
 
-            /*
-            View.ChartsCollection = Backbone.Collection.extend({
-                url: function () {
-                    return '/url/to/charts/collection';
-                },
-                initialize: function (model, options) {
-                    if (options) {
-                        this.options = options;
-                    }
-                }
-
-            });
-            */
-
             function makeChart(holder){
                 var $that = this;
                 function q() {

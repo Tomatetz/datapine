@@ -32,12 +32,8 @@ define(['backbone','marionette'],
         Backbone.history.stop();
         Backbone.history.start();
 
-        if (Backbone.history && Backbone.history.getFragment()!=='story') {
+        if (Backbone.history) {
             app.controller.navigate("", true);
-        } else {
-            $('.undln').removeClass('undln');
-            $('.show-story').addClass('undln');
-            app.controller.navigate("story", true);
         }
 
         return app;

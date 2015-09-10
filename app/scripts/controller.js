@@ -3,20 +3,6 @@ define(['app','view'],
 
         var chartsCollectionList = new Backbone.Collection(collectionJSON);
 
-            /*
-            var seriesCollection = new View.ChartsCollection;
-
-            seriesCollection.fetch({
-                success: function (collection, response) {
-                     var graphsCollectionViewRender = new View.GraphsCollectionView({
-                        collection:collection
-                     });
-                },
-                error: function(){
-                }
-            });
-            */
-
         var chartsCollectionViewRender = new View.ChartsCollectionView({
             collection:chartsCollectionList
         });
