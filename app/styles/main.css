@@ -32,9 +32,6 @@ body {
   float: left;
 }
 .thumbnail-wrapper .highcharts-container {
-  -webkit-transform: scale(1, 1);
-  -moz-transform: scale(1, 1);
-  transform: scale(1, 1);
   -webkit-transition: all ease-out 1s;
   -moz-transition: all ease-out 1s;
   transition: all ease-out 1s;
@@ -47,9 +44,6 @@ body {
 }
 .thumbnail-wrapper:hover .highcharts-container {
   position: absolute;
-  -webkit-transform: scale(0.98, 0.98);
-  -moz-transform: scale(0.98, 0.98);
-  transform: scale(0.98, 0.98);
   -webkit-transition: all ease-out 1s;
   -moz-transition: all ease-out 1s;
   transition: all ease-out 1s;
@@ -65,6 +59,9 @@ body {
 }
 .pad {
   padding: 0px 5px 10px 5px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 .thumbnail-graph-wrapper {
   overflow: hidden;

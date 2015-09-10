@@ -69,7 +69,7 @@ body {
   width: @thumbnailShort;
   float: left;
   .highcharts-container {
-    .vendor(transform, scale(1, 1));
+//    .vendor(transform, scale(1, 1));
     .vendor(transition, @commonTransition);
   }
   svg {
@@ -79,7 +79,7 @@ body {
   &:hover {
     .highcharts-container {
       position: absolute;
-      .vendor(transform, scale(0.98, 0.98));
+//      .vendor(transform, scale(0.98, 0.98));
       .vendor(transition, @commonTransition);
     }
     svg {
@@ -95,6 +95,7 @@ body {
 
 .pad {
   padding: 0px 5px 10px 5px;
+  .vendor(user-select, none);
 }
 
 .thumbnail-graph-wrapper {
